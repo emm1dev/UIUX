@@ -16,7 +16,17 @@
         </ul>
     </nav>
 
+    <dialog id="dialog">
+        <h2>log in</h2>
+        <p>enter</p>
+        <button id="close-dialog">close</button>
+    </dialog>
+
+    <button id="open-dialog">register/log in</button>
+
     <h1>coming soon..</h1>
+
+    <!-- <div class="bigbox"></div> -->
 
     <main>
         <img id="mug" src="../img/Muurla-Glass-mug-35dl-amber-346-035-05-6416114966189-1.png.webp" alt="orange mug">
@@ -25,7 +35,7 @@
             <div class="about-us">
                 <p class="about-label">hello from the kitchen!</p>
                 <h2>about us</h2>
-                <p>
+                <p class="intro-text">
                     We started this café because we couldn't find a place that felt like home. So we built one. Fresh
                     pastries every morning, coffee we're genuinely proud of, and a corner table that's always waiting
                     for you.
@@ -35,6 +45,23 @@
     </main>
 
     <footer>Copyright</footer>
+
+    <script>
+        const dialog = document.querySelector('#dialog');
+        const openDialogBtn = document.querySelector('#open-dialog');
+        const closeDialogBtn = document.querySelector('#close-dialog');
+
+        const openDialog = (e) => {
+            dialog.showModal();
+        };
+        openDialogBtn.addEventListener("click", openDialog);
+
+        const closeDialog = (e) => {
+            dialog.close();
+        };
+        closeDialogBtn.addEventListener("click", closeDialog);
+
+    </script>
 
 </body>
 
