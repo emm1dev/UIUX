@@ -9,7 +9,6 @@
         body {
             margin: 0;
             padding-top: 150px;
-            /* background: linear-gradient(90deg,rgba(255, 233, 189, 1) 0%, rgba(209, 150, 88, 1) 50%, rgba(237, 137, 43, 1) 100%); */
         }
 
         h1 {
@@ -45,19 +44,6 @@
         ul li a:active {
             background-color: rgb(91, 144, 100);
         }
-
-        /* .bigbox {
-            height: 300px;
-            margin: auto;
-            background-color: blue;
-            background-image: url(../img/cementtexture.jpg.avif);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-            max-width: 600px;
-            width: 100%;
-        } */
 
         main {
             background-color: rgb(246, 234, 219);
