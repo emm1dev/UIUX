@@ -1,5 +1,10 @@
         :root {
-            --accent-color: rgb(216, 130, 25)
+            --color-light: #f6ede2;
+            --color-card: #e6d5bc;
+            --color-surface: #cbb69a;
+            --color-accent: #d87a28;
+            --color-green: #6f8b4f;
+            --color-ink: #241a12;
         }
         
         * {
@@ -9,6 +14,13 @@
         body {
             margin: 0;
             padding-top: 150px;
+            background-image: 
+                linear-gradient(rgba(199, 118, 19, 0.278), rgba(145, 77, 22, 0.265)),
+                url(../img/cementtexture.jpg.avif);
+            background-size: cover; /*täyttää koko alueen */
+            background-position: center;
+            background-attachment: fixed; /*pysyy paikallaan*/
+            background-repeat: no-repeat;
         }
 
         h1 {
@@ -20,7 +32,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color:rgb(219, 192, 159);
+            background-color:var(--color-surface);
             width: 100%;
             z-index: 100;
             position: fixed;
@@ -33,32 +45,47 @@
 
         ul li a {
             display: block;
-            color: rgb(9, 2, 2);
+            color: var(--color-ink);
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
         ul li a:hover {
-            background-color: var(--accent-color);
+            background-color: var(--color-accent);
         }
         ul li a:active {
-            background-color: rgb(91, 144, 100);
+            background-color: var(--color-green);
+        }
+
+        .nav-login {
+            float: right;
+        }
+        .nav-login button {
+            background-color: transparent;
+            border: none;
+            color: var(--color-ink);
+            padding: 14px 16px;
+        }
+        .nav-login button:hover {
+            background-color: var(--color-accent);
         }
 
         main {
-            background-color: rgb(246, 234, 219);
+            background-color:var(--color-card);
             padding: 30px;
             width: 70%;
             margin: auto;
             margin-top: 50px;
             position: relative;
+            border-radius: 10px;
         }
 
         #mug {
-            width: 150px;
+            width: 220px;
             position: absolute;
-            right: -20px;
-            top: -90px;
+            right: -10px;
+            top: -120px;
+            transform: rotate(-12deg);
         }
 
         .clearfix::after {
@@ -68,7 +95,7 @@
         }
 
         .about-image {
-            width: 40%;
+            width: 45%;
             float: left;
             margin: 40px;
             border-radius: 5%;
@@ -81,7 +108,8 @@
 
         .about-label {
             margin-bottom: 3px;
-            color: rgb(96, 91, 79);
+            color: var(--color-accent);
+            font-weight: bold;
         }
 
         h2 {
@@ -89,12 +117,12 @@
         }
 
         p {
-            color: rgb(84, 121, 91);
+            color: var(--color-ink);
         }
 
         footer {
-            background-color: var(--accent-color);
-            color: rgb(246, 234, 219);
+            background-color: var(--color-surface);
+            color: var(--color-ink);
             margin-top: 40px;
             height: 100px;
             text-align: center;
@@ -102,12 +130,35 @@
         }
 
         dialog {
-            background-color: rgb(219, 192, 159);
-        }
-        dialog::backdrop {
-            backdrop-filter: blur(5px);
+            background-color: var(--color-surface);
+            color: var(--color-ink);
+            padding: 30px;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
         }
 
-        button {
-            background-color: rgb(246, 234, 219);
+        dialog h2 {
+        margin-top: 0;
+        color: var(--color-ink);
+        }
+
+        dialog p {
+        color: var(--color-ink);
+        }
+
+        dialog button {
+        background-color: var(--color-accent);
+        color: var(--color-light);
+        border: none;
+        border-radius: 6px;
+        padding: 8px 20px;
+        }
+
+        dialog button:hover {
+        background-color: var(--color-ink);
+        }
+        
+        dialog::backdrop {
+            backdrop-filter: blur(5px);
         }

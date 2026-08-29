@@ -10,19 +10,18 @@
 <body>
     <nav>
         <ul>
-            <li> <a>home</a></li>
-            <li> <a>menu</a></li>
-            <li> <a>contacts</a></li>
+            <li> <a href="#">home</a></li>
+            <li> <a href="#">menu</a></li>
+            <li> <a href="#">contacts</a></li>
+            <li class="nav-login"><button id="open-dialog">register/log in</button></li>
         </ul>
     </nav>
 
     <dialog id="dialog">
         <h2>log in</h2>
-        <p>enter</p>
+        <p>sign in to continue</p>
         <button id="close-dialog">close</button>
     </dialog>
-
-    <button id="open-dialog">register/log in</button>
 
     <h1>coming soon..</h1>
 
@@ -42,7 +41,7 @@
         </div>
     </main>
 
-    <footer>Copyright</footer>
+    <footer>coffeeshop</footer>
 
     <script>
         const dialog = document.querySelector('#dialog');
