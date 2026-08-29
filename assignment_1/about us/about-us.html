@@ -16,14 +16,6 @@
         </ul>
     </nav>
 
-    <dialog id="dialog">
-        <h2>log in</h2>
-        <p>enter</p>
-        <button id="close-dialog">close</button>
-    </dialog>
-
-    <button id="open-dialog">register/log in</button>
-
     <h1>coming soon..</h1>
 
     <!-- <div class="bigbox"></div> -->
@@ -45,23 +37,6 @@
     </main>
 
     <footer>Copyright</footer>
-
-    <script>
-        const dialog = document.querySelector('#dialog');
-        const openDialogBtn = document.querySelector('#open-dialog');
-        const closeDialogBtn = document.querySelector('#close-dialog');
-
-        const openDialog = (e) => {
-            dialog.showModal();
-        };
-        openDialogBtn.addEventListener("click", openDialog);
-
-        const closeDialog = (e) => {
-            dialog.close();
-        };
-        closeDialogBtn.addEventListener("click", closeDialog);
-
-    </script>
 
 </body>
 

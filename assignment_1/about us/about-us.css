@@ -114,14 +114,3 @@
             text-align: center;
             padding-top: 44px;
         }
-
-        dialog {
-            background-color: rgb(219, 192, 159);
-        }
-        dialog::backdrop {
-            backdrop-filter: blur(5px);
-        }
-
-        button {
-            background-color: rgb(246, 234, 219);
-        }
