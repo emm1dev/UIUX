@@ -27,7 +27,7 @@
             text-align: center;
         }
 
-        ul {
+        nav > ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -50,11 +50,17 @@
             padding: 14px 16px;
             text-decoration: none;
         }
+
         ul li a:hover {
             background-color: var(--color-accent);
         }
+
         ul li a:active {
             background-color: var(--color-green);
+        }
+
+        ul li:not(.nav-login) {
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
         }
 
         .nav-login {
@@ -86,8 +92,12 @@
             right: -10px;
             top: -120px;
             transform: rotate(-12deg);
+            transition: transform 0.5s;
         }
 
+        main:hover #mug {
+            transform: rotate(-12deg) scale(1.08);
+        }
         .clearfix::after {
             content: "";
             clear: both;
@@ -99,11 +109,20 @@
             float: left;
             margin: 40px;
             border-radius: 5%;
+            transition: transform 0.5s;
+        }
+
+        main:hover .about-image {
+            transform: scale(1.05);
         }
 
         .about-us {
             width: 40%;
             float: left;
+        }
+
+        .about-us > * + * {
+            margin-top: 30px;
         }
 
         .about-label {
@@ -112,7 +131,7 @@
             font-weight: bold;
         }
 
-        h2 {
+        .about-label + h2 {
             margin-top: 0;
         }
 
@@ -157,6 +176,11 @@
 
         dialog button:hover {
         background-color: var(--color-ink);
+        }
+
+        dialog button:focus-visible {
+            outline: 2px solid var(--color-ink);
+            outline-offset: 2px;
         }
         
         dialog::backdrop {
