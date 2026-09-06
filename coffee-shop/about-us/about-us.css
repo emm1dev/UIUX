@@ -1,188 +1,233 @@
-        :root {
-            --color-light: #f6ede2;
-            --color-card: #e6d5bc;
-            --color-surface: #cbb69a;
-            --color-accent: #d87a28;
-            --color-green: #6f8b4f;
-            --color-ink: #241a12;
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
+/* MUUTTUJAT & PERUS */
+:root {
+    --color-light: #f6ede2;
+    --color-card: #e6d5bc;
+    --color-surface: #cbb69a;
+    --color-accent: #d87a28;
+    --color-green: #6f8b4f;
+    --color-ink: #241a12;
+}
 
-        body {
-            margin: 0;
-            padding-top: 150px;
-            background-image: 
-                linear-gradient(rgba(199, 118, 19, 0.278), rgba(145, 77, 22, 0.265)),
-                url(../img/cementtexture.jpg.avif);
-            background-size: cover; /*täyttää koko alueen */
-            background-position: center;
-            background-attachment: fixed; /*pysyy paikallaan*/
-            background-repeat: no-repeat;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        h1 {
-            text-align: center;
-        }
+html,
+body {
+    overflow-x: hidden;
+}
 
-        nav > ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color:var(--color-surface);
-            width: 100%;
-            z-index: 100;
-            position: fixed;
-            top: 0;
-        }
+body {
+    margin: 0;
+    padding-top: 0;
+    background-image:
+        linear-gradient(rgba(199, 118, 19, 0.278), rgba(145, 77, 22, 0.265)),
+        url(../img/cementtexture.jpg.avif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
-        ul li {
-            float:left;
-        }
+h1 {
+    text-align: center;
+}
 
-        ul li a {
-            display: block;
-            color: var(--color-ink);
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+/* NAVIGAATIO */
+nav > ul {
+    list-style-type: none;
+    margin: 0 30px;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color-surface);
+}
 
-        ul li a:hover {
-            background-color: var(--color-accent);
-        }
+ul li {
+    float: left;
+}
 
-        ul li a:active {
-            background-color: var(--color-green);
-        }
+ul li a {
+    display: block;
+    color: var(--color-ink);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-        ul li:not(.nav-login) {
-            border-right: 1px solid rgba(0, 0, 0, 0.12);
-        }
+ul li a:hover {
+    background-color: var(--color-accent);
+}
 
-        .nav-login {
-            float: right;
-        }
-        .nav-login button {
-            background-color: transparent;
-            border: none;
-            color: var(--color-ink);
-            padding: 14px 16px;
-        }
-        .nav-login button:hover {
-            background-color: var(--color-accent);
-        }
+ul li a:active {
+    background-color: var(--color-green);
+}
 
-        main {
-            background-color:var(--color-card);
-            padding: 30px;
-            width: 70%;
-            margin: auto;
-            margin-top: 50px;
-            position: relative;
-            border-radius: 10px;
-        }
+ul li:not(.nav-login) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
 
-        #mug {
-            width: 220px;
-            position: absolute;
-            right: -10px;
-            top: -120px;
-            transform: rotate(-12deg);
-            transition: transform 0.5s;
-        }
+.nav-login {
+    float: right;
+}
 
-        main:hover #mug {
-            transform: rotate(-12deg) scale(1.08);
-        }
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+.nav-login button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-ink);
+    padding: 14px 16px;
+    font: inherit;
+    display: block;
+}
 
-        .about-image {
-            width: 45%;
-            float: left;
-            margin: 40px;
-            border-radius: 5%;
-            transition: transform 0.5s;
-        }
+.nav-login button:hover {
+    background-color: var(--color-accent);
+}
 
-        main:hover .about-image {
-            transform: scale(1.05);
-        }
+/* HERO */
+.hero {
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    margin: 0 30px;
+    border-radius: 0 0 12px 12px;
+}
 
-        .about-us {
-            width: 40%;
-            float: left;
-        }
+/* MAIN / ABOUT */
+main {
+    background-color: var(--color-card);
+    padding: 30px;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 10px;
+}
 
-        .about-us > * + * {
-            margin-top: 30px;
-        }
+#mug {
+    width: 28%;
+    max-width: 220px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(18%, -55%) rotate(-12deg);
+}
 
-        .about-label {
-            margin-bottom: 3px;
-            color: var(--color-accent);
-            font-weight: bold;
-        }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
-        .about-label + h2 {
-            margin-top: 0;
-        }
+.about-image {
+    width: 45%;
+    float: left;
+    margin: 40px;
+    border-radius: 5%;
+}
 
-        p {
-            color: var(--color-ink);
-        }
+.about-us {
+    width: 40%;
+    float: left;
+}
 
-        footer {
-            background-color: var(--color-surface);
-            color: var(--color-ink);
-            margin-top: 40px;
-            height: 100px;
-            text-align: center;
-            padding-top: 44px;
-        }
+.about-us > * + * {
+    margin-top: 30px;
+}
 
-        dialog {
-            background-color: var(--color-surface);
-            color: var(--color-ink);
-            padding: 30px;
-            border: none;
-            border-radius: 10px;
-            text-align: center;
-        }
+.about-label {
+    margin-bottom: 3px;
+    color: var(--color-accent);
+    font-weight: bold;
+}
 
-        dialog h2 {
-        margin-top: 0;
-        color: var(--color-ink);
-        }
+.about-label + h2 {
+    margin-top: 0;
+}
 
-        dialog p {
-        color: var(--color-ink);
-        }
+p {
+    color: var(--color-ink);
+}
 
-        dialog button {
-        background-color: var(--color-accent);
-        color: var(--color-light);
-        border: none;
-        border-radius: 6px;
-        padding: 8px 20px;
-        }
+/* FOOTER */
+footer {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    margin-top: 40px;
+    height: 100px;
+    text-align: center;
+    padding-top: 44px;
+}
 
-        dialog button:hover {
-        background-color: var(--color-ink);
-        }
+/* DIALOG */
+dialog {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
 
-        dialog button:focus-visible {
-            outline: 2px solid var(--color-ink);
-            outline-offset: 2px;
-        }
-        
-        dialog::backdrop {
-            backdrop-filter: blur(5px);
-        }
+dialog h2 {
+    margin-top: 0;
+    color: var(--color-ink);
+}
+
+dialog p {
+    color: var(--color-ink);
+}
+
+dialog button {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+}
+
+dialog button:hover {
+    background-color: var(--color-ink);
+}
+
+dialog button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}
+
+/* RESPONSIIVISUUS */
+
+/* tabletti ja alle */
+@media (max-width: 900px) {
+    main {
+        width: 88%;
+    }
+}
+
+/* about-osio pinoon */
+@media (max-width: 768px) {
+    .about-image,
+    .about-us {
+        width: 100%;
+        float: none;
+        margin: 0 0 20px 0;
+    }
+}
+
+/* puhelin */
+@media (max-width: 480px) {
+    main {
+        width: 92%;
+        padding: 20px;
+    }
+
+    nav a,
+    .nav-login button {
+        padding: 12px 10px;
+    }
+}
