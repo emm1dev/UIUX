@@ -200,6 +200,49 @@ dialog::backdrop {
     backdrop-filter: blur(5px);
 }
 
+/* DIALOG-FORMI */
+#login-form {
+    display: grid;
+    gap: 0.9rem;
+    text-align: left;
+    margin: 1.2rem 0;
+}
+
+#login-form .form-group {
+    display: grid;
+    gap: 0.3rem;
+}
+
+#login-form label {
+    font-weight: bold;
+}
+
+#login-form input {
+    padding: 0.5rem;
+    border: 2px solid var(--color-card);
+    border-radius: 5px;
+    font: inherit;
+}
+
+/* validointipalaute: punainen kun virheellinen, vihreä kun kelvollinen */
+#login-form input:invalid {
+    border-color: #c0392b;
+}
+
+#login-form input:valid {
+    border-color: var(--color-green);
+}
+
+#login-form small {
+    font-size: 0.8rem;
+}
+
+#login-message {
+    color: var(--color-green);
+    font-weight: bold;
+    min-height: 1.2rem;
+}
+
 /* RESPONSIIVISUUS */
 
 /* tabletti ja alle */
