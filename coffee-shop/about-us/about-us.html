@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>coffee shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="about-us.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li> <a href="#">home</a></li>
+            <li> <a href="#">menu</a></li>
+            <li> <a href="#">contacts</a></li>
+            <li class="nav-login"><button id="open-dialog">register/log in</button></li>
+        </ul>
+    </nav>
+
+    <dialog id="dialog">
+        <h2>log in</h2>
+        <p>sign in to continue</p>
+
+        <form id="login-form">
+            <div class="form-group">
+                <label for="login-name">Name</label>
+                <input type="text" id="login-name" name="name" required minlength="4"
+                    placeholder="at least 4 characters">
+            </div>
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" required
+                    pattern="[^@\s]+@metropolia\.fi" title="Use a @metropolia.fi address"
+                    placeholder="firstname.lastname@metropolia.fi">
+                <small>Must end with @metropolia.fi</small>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required minlength="8"
+                    pattern="(?=.*[A-Z])(?=.*\d).*" title="At least one uppercase letter and one number"
+                    placeholder="min. 8 characters">
+                <small>Min. 8 characters, one uppercase letter and one number</small>
+            </div>
+            <button type="submit">Log in</button>
+        </form>
+
+        <p id="login-message"></p>
+
+        <button id="close-dialog">close</button>
+    </dialog>
+
+    <div class="hero"></div>
+    <h1>coming soon..</h1>
+
+    <main>
+        <img id="mug" src="../img/Muurla-Glass-mug-35dl-amber-346-035-05-6416114966189-1.png.webp" alt="orange mug">
+        <div class="clearfix">
+            <img class="about-image" src="../img/matcha.jpg" alt="matcha">
+            <div class="about-us">
+                <p class="about-label">hello from the kitchen!</p>
+                <h2>about us</h2>
+                <p class="intro-text">
+                    We started this café because we couldn't find a place that felt like home. So we built one. Fresh
+                    pastries every morning, coffee we're genuinely proud of, and a corner table that's always waiting
+                    for you.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>coffeeshop</footer>
+
+    <script>
+        const dialog = document.querySelector('#dialog');
+        const openDialogBtn = document.querySelector('#open-dialog');
+        const closeDialogBtn = document.querySelector('#close-dialog');
+
+        const openDialog = (e) => {
+            dialog.showModal();
+        };
+        openDialogBtn.addEventListener("click", openDialog);
+
+        const closeDialog = (e) => {
+            dialog.close();
+        };
+        closeDialogBtn.addEventListener("click", closeDialog);
+
+        // selain estää lähetyksen jos HTML5-validointi ei mene läpi,
+        // joten tänne asti päästään vain kun kaikki kentät ovat kelvollisia
+        const loginForm = document.querySelector('#login-form');
+        const loginMessage = document.querySelector('#login-message');
+
+        const handleLogin = (event) => {
+            event.preventDefault();
+            loginMessage.textContent = 'Login successful!';
+        };
+        loginForm.addEventListener("submit", handleLogin);
+    </script>
+
+</body>
+
+</html>

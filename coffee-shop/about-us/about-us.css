@@ -1,0 +1,276 @@
+/* MUUTTUJAT & PERUS */
+:root {
+    --color-light: #f6ede2;
+    --color-card: #e6d5bc;
+    --color-surface: #cbb69a;
+    --color-accent: #d87a28;
+    --color-green: #6f8b4f;
+    --color-ink: #241a12;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding-top: 0;
+    background-image:
+        linear-gradient(rgba(199, 118, 19, 0.278), rgba(145, 77, 22, 0.265)),
+        url(../img/cementtexture.jpg.avif);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* NAVIGAATIO */
+nav > ul {
+    list-style-type: none;
+    margin: 0 30px;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color-surface);
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: var(--color-ink);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: var(--color-accent);
+}
+
+ul li a:active {
+    background-color: var(--color-green);
+}
+
+ul li:not(.nav-login) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.nav-login {
+    float: right;
+}
+
+.nav-login button {
+    background-color: transparent;
+    border: none;
+    color: var(--color-ink);
+    padding: 14px 16px;
+    font: inherit;
+    display: block;
+}
+
+.nav-login button:hover {
+    background-color: var(--color-accent);
+}
+
+/* HERO */
+.hero {
+    background-image: url("../img/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    margin: 0 30px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* MAIN / ABOUT */
+main {
+    background-color: var(--color-card);
+    padding: 30px;
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    position: relative;
+    border-radius: 10px;
+}
+
+#mug {
+    width: 28%;
+    max-width: 220px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(18%, -55%) rotate(-12deg);
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.about-image {
+    width: 45%;
+    float: left;
+    margin: 40px;
+    border-radius: 5%;
+}
+
+.about-us {
+    width: 40%;
+    float: left;
+}
+
+.about-us > * + * {
+    margin-top: 30px;
+}
+
+.about-label {
+    margin-bottom: 3px;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.about-label + h2 {
+    margin-top: 0;
+}
+
+p {
+    color: var(--color-ink);
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    margin-top: 40px;
+    height: 100px;
+    text-align: center;
+    padding-top: 44px;
+}
+
+/* DIALOG */
+dialog {
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+dialog h2 {
+    margin-top: 0;
+    color: var(--color-ink);
+}
+
+dialog p {
+    color: var(--color-ink);
+}
+
+dialog button {
+    background-color: var(--color-accent);
+    color: var(--color-light);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 20px;
+}
+
+dialog button:hover {
+    background-color: var(--color-ink);
+}
+
+dialog button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}
+
+/* DIALOG-FORMI */
+#login-form {
+    display: grid;
+    gap: 0.9rem;
+    text-align: left;
+    margin: 1.2rem 0;
+}
+
+#login-form .form-group {
+    display: grid;
+    gap: 0.3rem;
+}
+
+#login-form label {
+    font-weight: bold;
+}
+
+#login-form input {
+    padding: 0.5rem;
+    border: 2px solid var(--color-card);
+    border-radius: 5px;
+    font: inherit;
+}
+
+/* validointipalaute: punainen kun virheellinen, vihreä kun kelvollinen */
+#login-form input:invalid {
+    border-color: #c0392b;
+}
+
+#login-form input:valid {
+    border-color: var(--color-green);
+}
+
+#login-form small {
+    font-size: 0.8rem;
+}
+
+#login-message {
+    color: var(--color-green);
+    font-weight: bold;
+    min-height: 1.2rem;
+}
+
+/* RESPONSIIVISUUS */
+
+/* tabletti ja alle */
+@media (max-width: 900px) {
+    main {
+        width: 88%;
+    }
+}
+
+/* about-osio pinoon */
+@media (max-width: 768px) {
+    .about-image,
+    .about-us {
+        width: 100%;
+        float: none;
+        margin: 0 0 20px 0;
+    }
+}
+
+/* puhelin */
+@media (max-width: 480px) {
+    main {
+        width: 92%;
+        padding: 20px;
+    }
+
+    nav a,
+    .nav-login button {
+        padding: 12px 10px;
+    }
+}
